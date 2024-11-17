@@ -18,12 +18,15 @@ function DigitalClock() {
     const seconds = time.getSeconds();
     const regular = hours >= 12 ? "PM" : "AM";
     hours = hours % 12 || 12;
-    return `${hours}:${minutes}:${seconds} ${regular}`
+    return `${padZero(hours)}:${padZero(minutes)}:${padZero(seconds)} ${regular}`;
+  }
+  function padZero(number) {
+    return (number < 10 ? "0" : "" ) + number;
   }
   return (
     <div className="clock-container">
       <div className="clock">
-        <span>00:00:00</span>
+        <span>{formatTime()}</span>
       </div>
     </div>
   );
