@@ -1,9 +1,9 @@
-import './styles/App.css';
+import './styles/app.css';
 import "./styles/index.css";
 import Clock   from "./components/clock";
 function App() {
   return (
-    <div className="App">
+    <div className="app">
    <Clock/>
     </div>
   );
