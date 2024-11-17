@@ -12,6 +12,14 @@ function DigitalClock() {
     };
   }, []); //start only on mount
 
+  function formatTime() {
+    let hours = time.getHours();
+    const minutes = time.getMinutes();
+    const seconds = time.getSeconds();
+    const regular = hours >= 12 ? "PM" : "AM";
+    hours = hours % 12 || 12;
+    return `${hours}:${minutes}:${seconds} ${regular}`
+  }
   return (
     <div className="clock-container">
       <div className="clock">
